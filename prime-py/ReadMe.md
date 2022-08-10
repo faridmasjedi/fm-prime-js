@@ -1,5 +1,7 @@
 # Prime Numbers
 
+When you run `npm install fm-prime-py`, the `fm-prime-py` folder will be downloaded to your `node_modules`. you can copy all the files inside it to your root file and you can use them.
+
 ## `prime.py`
 
 - division : To find a division of a number

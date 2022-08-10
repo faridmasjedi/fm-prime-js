@@ -1,5 +1,10 @@
 # Prime Numbers
 
+Run `npm run fm-prime` and by requiring it, you can work with it. The main file is `primeTextWay.js`, but you can require other js files. For python one, you can check inside `node_modules` and copy all the files inside `prime-py` into your root file and then you can use them.
+
+<hr>
+<br>
+
 ## `prime-js`
 
 - On this folder, there is another [Readme](./prime-js/ReadMe.md)

@@ -1,13 +1,13 @@
 {
-  "name": "prime-js-big-numbers",
-  "version": "1.0.0",
+  "name": "fm-prime-js-big-numbers",
+  "version": "2.0.0",
   "description": "",
-  "main": "mathOperation.js",
+  "main": "primeString.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["fm-prime"],
+  "author": "Farid Masjedi",
   "license": "ISC",
   "dependencies": {
     "graceful-fs": "^4.2.10"

@@ -1,0 +1,22 @@
+{
+  "name": "fm-prime",
+  "version": "1.0.0",
+  "description": "Prime Numbers",
+  "main": "./prime-js/primeTextWay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faridmasjedi/fm-prime-js.git"
+  },
+  "keywords": [
+    "fm-prime"
+  ],
+  "author": "Farid Masjedi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faridmasjedi/fm-prime-js/issues"
+  },
+  "homepage": "https://github.com/faridmasjedi/fm-prime-js#readme"
+}

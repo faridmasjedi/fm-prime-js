@@ -1,12 +1,12 @@
 {
-  "name": "prime-py",
-  "version": "1.0.0",
-  "description": "## `prime.py`",
+  "name": "fm-prime-py",
+  "version": "2.0.0",
+  "description": "Prime Numbers Python",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["fm-prime"],
+  "author": "Farid Masjedi",
   "license": "ISC"
 }

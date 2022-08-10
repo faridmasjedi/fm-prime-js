@@ -1,17 +1,13 @@
 {
   "name": "fm-prime-js",
   "version": "2.0.0",
-  "description": "Prime numbers",
+  "description": "Prime numbers Javascript",
   "main": "primeTextWay.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "dddd"
-  },
   "keywords": ["fm-prime"],
-  "author": "Farid Masjedi <farid.masjedi1985@gmail.com>",
+  "author": "Farid Masjedi",
   "license": "ISC",
   "dependencies": {
     "nodeplotlib": "^1.1.2"
