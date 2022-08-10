@@ -434,4 +434,5 @@ module.exports = {
   isPrime,
   ifPrime,
   primeInRangeObj,
+  allPrimesSecondWay,
 };
