@@ -723,3 +723,5 @@ Assume the equation is :
 - allPrimesFromText : this method will find the primes between two numbers. The idea is to check if the number is exist in any prime files or no. If no, then it will use isPrimeFromText method to check if it is a prime or no. This is a little bit slower.
 
 - allPrimes: this method will find all the primes till a number. The interesting thing about this method is, if it could not find the primes, it will produce the folders. It means if we want to build primes till number n and we do not have the primes even till sqrt(n), it will build all those folders and then it will create a folder for number n. (this is like robotic, do not do anythig, just tell me till what number you want the primes :D )
+
+- allPrimesSecondWay: this method will copy all the files for a number and if a number is bigger than teh greatest primes in files, it will use primeInRangeObjTextWay to build the other files. ( super quick )

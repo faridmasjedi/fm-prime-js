@@ -209,5 +209,6 @@ const scientificWay = (obj) => {
   }
   return str.slice(0, -2);
 };
-console.log(allDivisions(3549 * 25));
+
+// console.log(allDivisions(3549 * 25));
 // console.log(isPrime(3549*25));

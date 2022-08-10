@@ -162,5 +162,5 @@ const primes = (num) => primesOrCounts(num);
 const primeCount = (num) => primesOrCounts(num, true);
 
 // console.log(nonPrimeIndexString(100));
-console.log(nonPrimeIndex(100));
-console.log(nonPrimeIndexString(100));
+// console.log(nonPrimeIndex(100));
+// console.log(nonPrimeIndexString(100));

@@ -57,13 +57,14 @@ const primeInRangeObjTextWay = (firstNum, lastNum, count = 0) => {
     if (ifPrime(numberToInvestigate)) {
       result += `${numberToInvestigate}, `;
       count++;
+      if (count === 10000) {
+        counter += 10000;
+        makeATextFileForPrime(lastNum, counter, result);
+        count = 0;
+        result = "";
+      }
     }
-    if (count === 10000) {
-      counter += 10000;
-      makeATextFileForPrime(lastNum, counter, result);
-      count = 0;
-      result = "";
-    }
+
     numberToInvestigate += numberToAdd;
     numberToAdd = numberToAdd === 2 ? 4 : 2;
   }
@@ -201,13 +202,14 @@ const allPrimesFromText = (firstNum, lastNum, count = 0) => {
     } else if (isPrimeFromText(numberToInvestigate)) {
       result += `${numberToInvestigate}, `;
       count++;
+      if (count === 10000) {
+        counter += 10000;
+        makeATextFileForPrime(lastNum, counter, result);
+        count = 0;
+        result = "";
+      }
     }
-    if (count === 10000) {
-      counter += 10000;
-      makeATextFileForPrime(lastNum, counter, result);
-      count = 0;
-      result = "";
-    }
+
     numberToInvestigate += numberToAdd;
     numberToAdd = numberToAdd === 2 ? 4 : 2;
   }
@@ -282,13 +284,14 @@ const copyAndBuildPrimes = (
     if (flag) {
       result += `${number}, `;
       count++;
+      if (count === 10000) {
+        counter += 10000;
+        makeATextFileForPrime(num, counter, result);
+        count = 0;
+        result = "";
+      }
     }
-    if (count === 10000) {
-      counter += 10000;
-      makeATextFileForPrime(num, counter, result);
-      count = 0;
-      result = "";
-    }
+
     number += numberToAdd;
     numberToAdd = numberToAdd === 2 ? 4 : 2;
   }
@@ -344,13 +347,14 @@ const buildPrimes = (
       if (flag) {
         result += `${number}, `;
         count++;
+        if (count === 10000) {
+          counter += 10000;
+          makeATextFileForPrime(numberToCreateFiles, counter, result);
+          count = 0;
+          result = "";
+        }
       }
-      if (count === 10000) {
-        counter += 10000;
-        makeATextFileForPrime(numberToCreateFiles, counter, result);
-        count = 0;
-        result = "";
-      }
+
       number += numberToAdd;
       numberToAdd = numberToAdd === 2 ? 4 : 2;
     }
@@ -371,22 +375,6 @@ const buildPrimes = (
 const allPrimes = (num) => {
   let files = findAllFilesForDivision(num);
   if (files.length) {
-    // let dir = createAFolderForPrime(num);
-    // if (!dir) {
-    //   return `Text files for primes till ${num} already exist.`;
-    // }
-    // copyFiles(files, num, files, files.length - 1);
-    // let data = allNumbersInFileArr(files[files.length - 1]);
-    // let res = data.filter((n) => n <= num);
-    // let lastFile = files[files.length - 2];
-    // let lastCounter = lastFile
-    //   ? parseInt(files[files.length - 2].split("Output")[1])
-    //   : false;
-    // makeATextFileForPrime(
-    //   num,
-    //   lastCounter ? lastCounter + res.length : res.length,
-    //   res.join(", ") + ", "
-    // );
     copyPrimeFromExistedFiles(num, files);
   } else {
     let lastDivisionToCheck = Math.floor(Math.sqrt(num));
@@ -416,6 +404,20 @@ const allPrimes = (num) => {
         counter
       );
     }
+  }
+};
+
+const allPrimesSecondWay = (num) => {
+  let files = findAllFilesForDivision(num);
+  if (files.length) {
+    copyPrimeFromExistedFiles(num, files);
+  } else {
+    let folder = findLastFolder();
+    files = sortFilesForPrimeInFolder(folder);
+    let lastFolderNumber = folder.split("-")[1];
+    let counter = parseInt(files[files.length - 1].split("Output")[1]);
+    primeInRangeObjTextWay(+lastFolderNumber + 1, num, counter);
+    copyFiles(files, num, folder, files.length);
   }
 };
 

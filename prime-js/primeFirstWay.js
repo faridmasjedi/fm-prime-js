@@ -218,7 +218,6 @@ const primeInRangeObj = (firstNum, lastNum) => {
 // console.log(allDivisions(354922545745));
 // console.log(isIsolatedPrime(47));
 // console.log(ifPrime(3));
-
 // console.log(primeInRangeObj(99000000, 100000000));
 
 module.exports = {
