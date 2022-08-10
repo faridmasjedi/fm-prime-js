@@ -1,8 +1,8 @@
 # Prime Numbers
 
-Run `npm run fm-prime` and by requiring it, you can work with it. The main file is `primeTextWay.js`, but you can require other js files. For python one, you can check inside `node_modules` and copy all the files inside `prime-py` into your root file and then you can use them. You can create prime files by using this way, but you do not have access to the existing `prime-output` or `prime-output-big` folders.
+Run `npm run fm-primes` and by requiring it, you can work with it. The main file is `primeTextWay.js`, but you can require other js files. For python one, you can check inside `node_modules` and copy all the files inside `prime-py` into your root file and then you can use them. You can create prime files by using this way, but you do not have access to the existing `prime-output` or `prime-output-big` folders.
 
-Thus, at first you can run `mv ./node_modules/fm-prime/prime-output .` and `mv ./node_modules/fm-prime/prime-output-big .`. Even if you want, you can run `mv ./node_modules/fm-prime .` and it will give you all the files. and you can use them.
+Thus, at first you can run `mv ./node_modules/fm-primes/prime-output .` and `mv ./node_modules/fm-primes/prime-output-big .`. Even if you want, you can run `mv ./node_modules/fm-primes .` and it will give you all the files. and you can use them.
 
 The point is: by just requiring it, you do not have access to `prime-output` or `prime-output-big` folder. You can create files by your own using
 

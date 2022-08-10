@@ -1,5 +1,5 @@
 {
-  "name": "fm-prime",
+  "name": "fm-primes",
   "version": "1.0.0",
   "description": "Prime Numbers",
   "main": "./prime-js/primeTextWay.js",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/faridmasjedi/fm-prime-js.git"
   },
   "keywords": [
-    "fm-prime"
+    "fm-primes"
   ],
   "author": "Farid Masjedi",
   "license": "ISC",
