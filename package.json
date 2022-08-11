@@ -1,6 +1,6 @@
 {
   "name": "fm-primes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Prime Numbers",
   "main": "./prime-js/primeTextWay.js",
   "scripts": {
