@@ -1,4 +1,4 @@
-const fs = require("graceful-fs");
+const fs = require("fs");
 
 const {
   createAFolder,
@@ -14,7 +14,9 @@ const {
   copyFile,
 } = require("./textFactory");
 
-const folderPath = "prime-output";
+let folderPath = "prime-output";
+const nodePath = "node_modules/fm-primes/" + folderPath;
+
 const createAFolderForPrime = (number, folderPathway = folderPath) =>
   createAFolder(".", folderPathway, "output-" + number);
 
@@ -30,13 +32,22 @@ const makeATextFileForPrime = (
     data
   );
 
-const getSortedFilesFromAFolderForPrime = () =>
-  getSortedFilesFromAFolder("./" + folderPath);
+const getSortedFilesFromAFolderForPrime = () =>{
+  let fp = fs.existsSync("./" + folderPath ) ? folderPath : nodePath;
+  return getSortedFilesFromAFolder("./" + fp);
+}
+  
 
-const sortFolderForPrime = () => sortTheFolders("./" + folderPath, "output-");
+const sortFolderForPrime = () => {
+  let fp = fs.existsSync("./" + folderPath ) ? folderPath : nodePath;
+  return sortTheFolders("./" + fp, "output-");
+}
 
-const sortFilesForPrimeInFolder = (foldername) =>
-  sortTheFolders("./" + folderPath + "/" + foldername, "Output");
+const sortFilesForPrimeInFolder = (foldername) =>{
+  let fp = fs.existsSync("./" + folderPath ) ? folderPath : nodePath;
+  return sortTheFolders("./" + fp + "/" + foldername, "Output");
+}
+  
 
 const searchFolderFunc = (folders, num) => {
   return folders.find((f) => {
@@ -46,16 +57,22 @@ const searchFolderFunc = (folders, num) => {
 };
 
 const findLastFolder = () => {
-  let folders = sortTheFolders(folderPath, "output-");
+  let fp = fs.existsSync("./" + folderPath ) ? folderPath : nodePath;
+  let folders = sortTheFolders(fp, "output-");
   return folders[folders.length - 1];
 };
 
-const findTheProperFolderForPrime = (num) =>
-  findTheProperFolder("./" + folderPath, searchFolderFunc, num, "output-");
+const findTheProperFolderForPrime = (num) =>{
+  let fp = fs.existsSync("./" + folderPath ) ? folderPath : nodePath;
+
+  return findTheProperFolder("./" + fp, searchFolderFunc, num, "output-");
+}
 
 const searchFileFunc = (folderPath, files, num) => {
+  let fp = fs.existsSync("./" + folderPath ) ? folderPath : nodePath;
+
   let file = files.find((f) => {
-    let data = fs.readFileSync(folderPath + "/" + f, "utf-8");
+    let data = fs.readFileSync(fp + "/" + f, "utf-8");
     data = data.toString();
     data = data.split(", ");
     let firstPrimeInFile = Number(data[0]);
@@ -67,8 +84,10 @@ const searchFileFunc = (folderPath, files, num) => {
 };
 
 const findTheProperFileForPrime = (num) => {
+  let fp = fs.existsSync("./" + folderPath ) ? folderPath : nodePath;
+
   return findTheProperFile(
-    "./" + folderPath,
+    "./" + fp,
     searchFolderFunc,
     searchFileFunc,
     "output-",
@@ -78,8 +97,10 @@ const findTheProperFileForPrime = (num) => {
 
 const searchAllFilesFunc = (folderPath, files, num) => {
   let result = [];
+  let fp = fs.existsSync("./" + folderPath ) ? folderPath : nodePath;
+
   files.forEach((f) => {
-    let data = fs.readFileSync(folderPath + "/" + f, "utf-8");
+    let data = fs.readFileSync(fp + "/" + f, "utf-8");
     data = data.toString();
     data = data.split(", ");
     let firstPrimeInFile = Number(data[0]);
@@ -90,8 +111,9 @@ const searchAllFilesFunc = (folderPath, files, num) => {
 };
 
 const findAllFilesForDivision = (num) => {
+  let fp = fs.existsSync("./" + folderPath ) ? folderPath : nodePath;
   return findAllFilesTillNumber(
-    "./" + folderPath,
+    "./" + fp,
     searchFolderFunc,
     searchAllFilesFunc,
     "output-",
@@ -121,13 +143,14 @@ const copyFiles = (
   mainFolder = files,
   whichIndex = files.length
 ) => {
+  let fp = fs.existsSync("./" + folderPath) ? folderPath : nodePath;
   let filePath =
-    mainFolder === files ? "" : "./" + folderPath + "/" + mainFolder + "/";
+    mainFolder === files ? "" : "./" + fp + "/" + mainFolder + "/";
   for (let i = 0; i < whichIndex; i++) {
     copyFile(
       filePath + files[i],
       "./" +
-        folderPath +
+        fp +
         "/output-" +
         newfolderNum +
         "/Output" +

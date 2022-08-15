@@ -1,4 +1,4 @@
-const fs = require("graceful-fs");
+const fs = require("fs");
 
 const createAFolder = (parentPath, parentName, childName) => {
   let rootFolder = parentPath + "/" + parentName;
